@@ -1,4 +1,4 @@
-package com.nttdataEstudos.nttEstudos;
+package com.nttdataestudos;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

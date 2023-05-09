@@ -1,7 +1,9 @@
-package com.nttdataEstudos.nttEstudos.entities;
+package com.nttdataestudos.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
@@ -10,6 +12,8 @@ import java.util.Objects;
 @Setter
 @Entity
 @Table(name = "tb_game")
+@AllArgsConstructor
+@NoArgsConstructor
 public class Game {
 
     @Id
@@ -27,22 +31,6 @@ public class Game {
     private String shortDescription;
     @Column(columnDefinition = "TEXT")
     private String longDescription;
-
-    public Game() {
-    }
-
-    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
-                String shortDescription, String longDescription) {
-        this.id = id;
-        this.title = title;
-        this.year = year;
-        this.genre = genre;
-        this.platforms = platforms;
-        this.score = score;
-        this.imgUrl = imgUrl;
-        this.shortDescription = shortDescription;
-        this.longDescription = longDescription;
-    }
 
     @Override
     public int hashCode() {

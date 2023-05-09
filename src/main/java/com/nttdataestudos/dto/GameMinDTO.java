@@ -1,6 +1,6 @@
-package com.nttdataEstudos.nttEstudos.dto;
+package com.nttdataestudos.dto;
 
-import com.nttdataEstudos.nttEstudos.entities.Game;
+import com.nttdataestudos.entities.Game;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
