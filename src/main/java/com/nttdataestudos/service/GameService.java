@@ -1,13 +1,19 @@
 package com.nttdataestudos.service;
 
-import com.nttdataestudos.dto.GameDTO;
-import com.nttdataestudos.dto.GameMinDTO;
-import com.nttdataestudos.dto.GameRequestDTO;
+import com.nttdataestudos.model.dto.GameDTO;
+import com.nttdataestudos.model.dto.GameListResponseDTO;
+import com.nttdataestudos.model.dto.GameMinDTO;
+import com.nttdataestudos.model.dto.GameRequestDTO;
 import com.nttdataestudos.entities.Game;
+import com.nttdataestudos.model.mapper.GameListResponseMapper;
+import com.nttdataestudos.projections.GameMinProjection;
 import com.nttdataestudos.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class GameService {
@@ -43,5 +49,11 @@ public class GameService {
         newGame.setShortDescription(game.getShortDescription());
         newGame.setLongDescription(game.getLongDescription());
         return gameRepository.save(newGame);
+    }
+
+    @Transactional(readOnly = true)
+    public GameListResponseDTO findByList(Long listId){
+        List<GameMinProjection> gameList = gameRepository.searchByList(listId);
+        return new GameListResponseMapper(gameList).getResponseDTO();
     }
 }

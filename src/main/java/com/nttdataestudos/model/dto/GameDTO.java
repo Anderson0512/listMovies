@@ -1,4 +1,4 @@
-package com.nttdataestudos.dto;
+package com.nttdataestudos.model.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;

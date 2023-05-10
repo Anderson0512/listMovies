@@ -1,7 +1,7 @@
 package com.nttdataestudos.controller;
 
-import com.nttdataestudos.dto.GameDTO;
-import com.nttdataestudos.dto.GameRequestDTO;
+import com.nttdataestudos.model.dto.GameDTO;
+import com.nttdataestudos.model.dto.GameRequestDTO;
 import com.nttdataestudos.entities.Game;
 import com.nttdataestudos.service.GameService;
 import org.springframework.beans.factory.annotation.Autowired;

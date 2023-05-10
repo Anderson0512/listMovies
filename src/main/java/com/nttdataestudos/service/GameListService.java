@@ -1,6 +1,6 @@
 package com.nttdataestudos.service;
 
-import com.nttdataestudos.dto.GameListDTO;
+import com.nttdataestudos.model.dto.GameListDTO;
 import com.nttdataestudos.repository.GameListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
