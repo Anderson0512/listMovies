@@ -19,7 +19,7 @@ public class GameController {
         return gameService.findAll();
     }
     @GetMapping("/{id}")
-    public Game findById(@PathVariable Long id){
+    public Game findById(@PathVariable Long id) throws Exception {
         return gameService.findById(id);
     }
     @PostMapping()

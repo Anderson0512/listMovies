@@ -7,6 +7,7 @@ import com.nttdataestudos.entities.Game;
 import com.nttdataestudos.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class GameService {
@@ -17,6 +18,7 @@ public class GameService {
         this.gameRepository = gameRepository;
     }
 
+    @Transactional(readOnly = true)
     public GameDTO findAll(){
         var games = gameRepository.findAll();
         var list =  games.stream().map(GameMinDTO::new).toList();
@@ -24,8 +26,10 @@ public class GameService {
         content.setContent(list);
         return content;
     }
-    public Game findById(Long id){
-        return gameRepository.findById(id).orElseThrow();
+
+    @Transactional(readOnly = true)
+    public Game findById(Long id) throws Exception {
+        return gameRepository.findById(id).orElseThrow(() -> new Exception("Id informado não existe"));
     }
 
     public Game create(GameRequestDTO game){
