@@ -17,5 +17,5 @@ public class GameListResponseDTO implements Serializable {
     private SimplePageable pageable = new SimplePageable();
 
     @JsonProperty("_content")
-    private List<GameMinDTO> content;
+    private transient List<GameMinDTO> content;
 }
